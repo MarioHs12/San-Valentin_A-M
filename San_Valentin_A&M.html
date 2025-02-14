@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi San Valentín?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            margin: 0;
+            padding: 50px;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+        }
+        h1 {
+            color: #ff4081;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+        .yes {
+            background-color: #ff4081;
+            color: white;
+            box-shadow: 0 0 10px rgba(255, 64, 129, 0.6);
+        }
+        .yes:hover {
+            background-color: #ff1a66;
+            box-shadow: 0 0 20px rgba(255, 64, 129, 0.9);
+        }
+        .no {
+            background-color: #ccc;
+            color: black;
+            position: absolute;
+        }
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            display: none;
+        }
+        .popup h2 {
+            color: #ff4081;
+        }
+        .popup p {
+            font-size: 18px;
+        }
+        .popup button {
+            background-color: #ff4081;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¿Quieres ser mi San Valentín? ❤️</h1>
+        <div class="buttons">
+            <button class="yes" onclick="showPopup()">Sí</button>
+            <button class="no" onmouseover="moveNoButton()">No</button>
+        </div>
+    </div>
+    
+    <div class="popup" id="popup">
+        <h2>¡Sabía que dirías que sí! ❤️</h2>
+        <p>Te amo muchísimo mi niña preciosa💖🥰</p>
+        <p>Yo soy el más feliz contigo 🥹</p>
+        <br>
+        <br>
+        <p>❤️Abi & Mario ❤️</p>
+        <p>¡Por siempre!</p>
+        <br>
+        <br>
+        <p>De parte de Mario: Te ama con todo su ser 😍💖</p>
+        <button onclick="closePopup()">Cerrar</button>
+    </div>
+
+    <script>
+        function moveNoButton() {
+            var button = document.querySelector('.no');
+            var x = Math.random() * (window.innerWidth - 100);
+            var y = Math.random() * (window.innerHeight - 100);
+            button.style.left = x + 'px';
+            button.style.top = y + 'px';
+        }
+
+        function showPopup() {
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
